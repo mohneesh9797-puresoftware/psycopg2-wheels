@@ -22,7 +22,8 @@ matrix:
         - env:
             SCRIPT=./scripts/build_sdist.sh
             PACKAGE_NAME="psycopg2-binary"
-        - env:
+        - arch: arm64
+          env:
             SCRIPT=./scripts/build_manylinux2014_aarch64.sh
             PACKAGE_NAME="psycopg2-binary"
         - env:

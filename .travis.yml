@@ -45,7 +45,7 @@ before_script:
     - sudo ./scripts/configure_postgres.sh
     - sudo chmod +x $SCRIPT
 
-script: $SCRIPT
+script: travis_wait 10 $SCRIPT
 
 deploy:
   - provider: script

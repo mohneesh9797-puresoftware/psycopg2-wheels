@@ -19,6 +19,7 @@ set +eu
 source ~/perl5/perlbrew/etc/bashrc
 set -eu
 perlbrew help
+yum install bzip2
 perlbrew install --notest perl
 perlbrew switch perl
 

@@ -22,6 +22,7 @@ perlbrew help
 yum install bzip2
 perlbrew install --notest perl-5.16.0
 perlbrew switch perl-5.16.0
+echo "I am ready"
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
 # Build openssl if needed
 OPENSSL_TAG="OpenSSL_${OPENSSL_VERSION//./_}"

@@ -20,7 +20,7 @@ source ~/perl5/perlbrew/etc/bashrc
 set -eu
 perlbrew help
 yum install bzip2
-perlbrew install --notest perl-5.16.0
+travis_wait 20 perlbrew install --notest perl-5.16.0
 perlbrew switch perl-5.16.0
 
 # Build openssl if needed

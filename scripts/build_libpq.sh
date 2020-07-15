@@ -18,6 +18,7 @@ curl -sL https://install.perlbrew.pl | bash
 set +eu
 source ~/perl5/perlbrew/etc/bashrc
 set -eu
+perlbrew help
 perlbrew install --notest perl
 perlbrew switch perl
 

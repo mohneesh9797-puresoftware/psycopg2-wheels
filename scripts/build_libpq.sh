@@ -20,8 +20,8 @@ source ~/perl5/perlbrew/etc/bashrc
 set -eu
 perlbrew help
 yum install bzip2
-perlbrew install --notest perl
-perlbrew switch perl
+perlbrew install --notest perl-5.16.0
+perlbrew switch perl-5.16.0
 
 # Build openssl if needed
 OPENSSL_TAG="OpenSSL_${OPENSSL_VERSION//./_}"

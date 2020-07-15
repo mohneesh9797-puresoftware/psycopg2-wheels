@@ -41,6 +41,7 @@ matrix:
 
 before_script:
     - sudo ./scripts/configure_postgres.sh
+    - sudo chmod +x $SCRIPT
 
 script: $SCRIPT
 

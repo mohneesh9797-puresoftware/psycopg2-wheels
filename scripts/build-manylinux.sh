@@ -23,7 +23,7 @@ libdir="$DIR/../libs/$(uname -p)/"
 mkdir -p "$libdir"
 cd "$libdir"
 
-${DIR}/build_libpq.sh > /dev/null
+${DIR}/build_libpq.sh > /dev/null || travis_terminate $?
 
 # Find psycopg version
 export VERSION=$(grep -e ^PSYCOPG_VERSION /build/psycopg2/setup.py | sed "s/.*'\(.*\)'/\1/")

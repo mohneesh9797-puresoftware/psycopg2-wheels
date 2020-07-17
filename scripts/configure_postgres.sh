@@ -5,8 +5,10 @@ set -e -x
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     if [[ 'uname -m' == "aarch64" ]]; then 
+        uname -m
         CONFIG_DIR=/etc/postgresql/9.6/main
     else
+        uname -m
         CONFIG_DIR=/etc/postgresql/9.6/main/
     fi
     # Listen on all the hosts

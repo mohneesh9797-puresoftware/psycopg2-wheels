@@ -16,7 +16,7 @@ yum install -y zlib-devel krb5-devel pam-devel
 # Need perl 5.10.0 to build/install openssl
 curl -sL https://install.perlbrew.pl | bash
 set +eu
-cp -r /bin/* /opt/rh/devtoolset-9/root/usr/bin/* /root/perl5/perlbrew/bin/
+cp -r /bin/* /root/perl5/perlbrew/bin/
 source ~/perl5/perlbrew/etc/bashrc
 set -eu
 perlbrew help

@@ -4,7 +4,7 @@
 set -e -x
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    if [[ 'uname -m' == "aarch64" ]]; then 
+    if [[ `uname -m` == 'aarch64' ]]; then 
         CONFIG_DIR=/etc/postgresql/9.6/main
     else
         uname -m

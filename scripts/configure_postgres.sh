@@ -5,10 +5,10 @@ set -e -x
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     if [[ `uname -m` == 'aarch64' ]]; then 
-        CONFIG_DIR=/etc/postgresql/9.6/main
+        CONFIG_DIR=/etc/postgresql/10/main
     else
         uname -m
-        CONFIG_DIR=/etc/postgresql/9.6/main/
+        CONFIG_DIR=/etc/postgresql/10/main/
     fi
     # Listen on all the hosts
     sed -i "s/^\s*#\?\s*listen_addresses.*/listen_addresses = '*'/" \

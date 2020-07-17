@@ -25,6 +25,8 @@ perlbrew install --notest --force  perl-5.16.0
 perlbrew switch perl-5.16.0
 echo "I am ready"
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
+export PATH=$PATH:/opt/rh/devtoolset-9/root/usr/bin/gcc:/usr/bin/:/bin/
+yum install -y gcc
 # Build openssl if needed
 OPENSSL_TAG="OpenSSL_${OPENSSL_VERSION//./_}"
 OPENSSL_DIR="openssl-${OPENSSL_TAG}"
@@ -53,7 +55,6 @@ if [ ! -d "${OPENSSL_DIR}" ]; then curl -sL \
         exit 1
     fi
 else
-    export PATH=$PATH:/opt/rh/devtoolset-9/root/usr/bin/gcc:/usr/bin/:/bin/
     cd "{OPENSSL_DIR}"
 fi
 

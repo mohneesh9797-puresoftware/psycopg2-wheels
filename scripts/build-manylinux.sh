@@ -35,6 +35,7 @@ sed -i "s/^setup(name=\"psycopg2\"/setup(name=\"${PACKAGE_NAME}\"/" \
     /build/psycopg2/setup.py
 
 # Create the wheel packages
+ls -l /opt/python/
 for PYBIN in /opt/python/*/bin; do
     # Skip unsupported python versions. Keep consistent with testing below.
     if $(${PYBIN}/python --version 2>&1  | grep -qE '2\.6|3\.2|3\.3'); then

@@ -69,6 +69,7 @@ cd ..
 # https://github.com/pypa/manylinux/issues/376
 SASL_TAG="cyrus-sasl-${SASL_VERSION}"
 SASL_DIR="cyrus-sasl-${SASL_TAG}"
+yum install -y libtool 
 if [ ! -d "${SASL_DIR}" ]; then
     curl -sL \
         https://github.com/cyrusimap/cyrus-sasl/archive/${SASL_TAG}.tar.gz \

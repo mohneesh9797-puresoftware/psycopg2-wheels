@@ -53,6 +53,7 @@ if [ ! -d "${OPENSSL_DIR}" ]; then curl -sL \
         exit 1
     fi
 else
+    export PATH=$PATH:/opt/rh/devtoolset-9/root/usr/bin/gcc:/usr/bin/:/bin/
     cd "{OPENSSL_DIR}"
 fi
 

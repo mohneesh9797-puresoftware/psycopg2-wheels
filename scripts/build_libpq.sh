@@ -6,7 +6,7 @@ set -euo pipefail
 set -x
 
 OPENSSL_VERSION="1.1.1d"
-LDAP_VERSION="2.4.48"
+LDAP_VERSION="2.4.50"
 SASL_VERSION="2.1.27"
 # If you change this, fix WANT_LIBPQ too in .travis.yml
 POSTGRES_VERSION="11.5"

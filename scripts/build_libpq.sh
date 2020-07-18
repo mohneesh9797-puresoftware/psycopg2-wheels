@@ -16,17 +16,19 @@ yum install -y zlib-devel krb5-devel pam-devel
 # Need perl 5.10.0 to build/install openssl
 curl -sL https://install.perlbrew.pl | bash
 set +eu
-cp -r /bin/* /root/perl5/perlbrew/bin/
+if [[ `uname -m` == 'aarch64' ]]; then 
+	cp -r /bin/* /root/perl5/perlbrew/bin/
+	yum install -y bzip2 	
+fi
 source ~/perl5/perlbrew/etc/bashrc
 set -eu
-perlbrew help
-yum install bzip2
-perlbrew install --notest --force  perl-5.16.0
+perlbrew install --notest perl-5.16.0
 perlbrew switch perl-5.16.0
-echo "I am ready"
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
-export PATH=$PATH:/opt/rh/devtoolset-9/root/usr/bin/gcc:/usr/bin/:/bin/
-yum install -y gcc
+if [[ `uname -m` == 'aarch64' ]]; then 
+	export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
+	yum install -y gcc	libtool
+fi
+
 # Build openssl if needed
 OPENSSL_TAG="OpenSSL_${OPENSSL_VERSION//./_}"
 OPENSSL_DIR="openssl-${OPENSSL_TAG}"
@@ -69,7 +71,6 @@ cd ..
 # https://github.com/pypa/manylinux/issues/376
 SASL_TAG="cyrus-sasl-${SASL_VERSION}"
 SASL_DIR="cyrus-sasl-${SASL_TAG}"
-yum install -y libtool 
 if [ ! -d "${SASL_DIR}" ]; then
     curl -sL \
         https://github.com/cyrusimap/cyrus-sasl/archive/${SASL_TAG}.tar.gz \

@@ -47,7 +47,13 @@ before_script:
     - sudo ./scripts/configure_postgres.sh
     - sudo chmod +x $SCRIPT
 
-script: travis_wait 40 $SCRIPT
+script: 
+- if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
+     travis_wait 40 $SCRIPT;
+ else
+     $SCRIPT;
+ fi
+
 
 deploy:
   - provider: script

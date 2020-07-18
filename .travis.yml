@@ -49,7 +49,7 @@ before_script:
 
 script: 
 - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
-     travis_wait 40 $SCRIPT;
+     travis_wait 40 -x $SCRIPT;
  else
      $SCRIPT;
  fi

@@ -16,12 +16,12 @@ yum install -y zlib-devel krb5-devel pam-devel
 # Need perl 5.10.0 to build/install openssl
 curl -sL https://install.perlbrew.pl | bash
 set +eu
+source ~/perl5/perlbrew/etc/bashrc
+set -eu
 if [[ `uname -m` == 'aarch64' ]]; then
       	export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 	yum install -y bzip2 gcc libtool
 fi
-source ~/perl5/perlbrew/etc/bashrc
-set -eu
 perlbrew install --notest perl-5.16.0
 perlbrew switch perl-5.16.0
 # Build openssl if needed
